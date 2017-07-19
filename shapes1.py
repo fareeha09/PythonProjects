@@ -38,3 +38,9 @@ def repeat_shapes():
         draw_shape()
         left(360/sides*2)
         counter2+=1
+
+
+repeat_shapes()
+#drawCircle(30)
+# Close window on click.
+exitonclick()
