@@ -10,11 +10,21 @@ x_pos = -250
 y_pos = -150
 #t.setposition(x_pos, y_pos)
 
+import turtle
+
+def drawCircle(radius, extent, steps):
+    counter=0
+    turtle.speed(5)
+    forward(radius)
+    while steps< counter:
+        counter+=1
+
+
 sides= int(input("How many sides do you want your shape to have?"))
 ### Write your code below:
 def draw_shape():
     counter = 0
-    while counter < sides:
+    while counter <= sides:
         pendown()
         forward(30)
         right(360/sides)
@@ -28,8 +38,3 @@ def repeat_shapes():
         draw_shape()
         left(360/sides*2)
         counter2+=1
-
-
-repeat_shapes()
-# Close window on click.
-exitonclick()
