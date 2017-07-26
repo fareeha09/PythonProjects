@@ -1,0 +1,66 @@
+#include <Servo.h>
+//#include <ArduinoRobot.h>
+Servo servoLeft;
+Servo servoRight;
+
+int piezo_pin=0;
+
+void setup() {
+  servoLeft.attach(13);
+  servoRight.attach(12);
+//  Robot.begin();
+  pinMode(piezo_pin, OUTPUT);
+}
+
+void loop() {
+  tone(piezo_pin, 659);
+  delay(1000);
+  tone(piezo_pin, 659);
+    delay(1000);
+    tone(piezo_pin, 698);
+      delay(1000);
+   tone(piezo_pin, 784);
+     delay(1000);
+   tone(piezo_pin, 784);
+     delay(1000);
+   tone(piezo_pin, 698);
+     delay(1000);
+   tone(piezo_pin, 659);
+     delay(1000);
+   tone(piezo_pin, 587);
+     delay(1000);
+   tone(piezo_pin, 523);
+     delay(1000);
+   tone(piezo_pin, 523);
+     delay(1000);
+   tone(piezo_pin, 587);
+     delay(1000);
+   tone(piezo_pin, 659);
+     delay(1000);
+   tone(piezo_pin, 659);
+     delay(1000);
+   tone(piezo_pin, 587);
+     delay(1000);
+   tone(piezo_pin, 587);
+vertical();
+side();
+}
+
+void vertical() {
+  for(int i=0; i<6; i++){
+   servoLeft.writeMicroseconds(1300);
+   servoRight.writeMicroseconds(1700);
+   delay(288.9);
+   servoLeft.writeMicroseconds(1700);
+   servoRight.writeMicroseconds(1300);
+   delay(288.9);
+   }
+}
+
+void side() {
+  for(int i=0; i<2; i++){
+   servoLeft.writeMicroseconds(1300);
+   servoRight.writeMicroseconds(1500);
+   delay(580);  
+  }
+}
